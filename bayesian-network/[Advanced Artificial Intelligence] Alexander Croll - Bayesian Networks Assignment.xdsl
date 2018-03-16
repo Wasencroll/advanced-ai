@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="Water">
+			<state id="appropriate" />
+			<state id="not_appropriate" />
+			<probabilities>0.85 0.15</probabilities>
+		</cpt>
+		<cpt id="Node2">
+			<state id="acceptable" />
+			<state id="too_much" />
+			<probabilities>0.38 0.62</probabilities>
+		</cpt>
+		<cpt id="Light">
+			<state id="good" />
+			<state id="insufficient" />
+			<probabilities>0.97 0.03</probabilities>
+		</cpt>
+		<cpt id="Flowering">
+			<state id="true" />
+			<state id="false" />
+			<parents>Water</parents>
+			<probabilities>0.85 0.15 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Mold">
+			<state id="true" />
+			<state id="false" />
+			<parents>Water</parents>
+			<probabilities>0.1 0.9 0.87 0.13</probabilities>
+		</cpt>
+		<cpt id="LeafHealth">
+			<state id="true" />
+			<state id="false" />
+			<parents>Mold</parents>
+			<probabilities>0.95 0.05 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="BrownLeaves">
+			<state id="true" />
+			<state id="false" />
+			<parents>Node2</parents>
+			<probabilities>0.08 0.92 0.96 0.04000000000000004</probabilities>
+		</cpt>
+		<cpt id="FallingLeaves">
+			<state id="true" />
+			<state id="false" />
+			<parents>LeafHealth BrownLeaves</parents>
+			<probabilities>0.999 0.001000000000000001 0.6 0.4 0.89 0.11 0.03 0.97</probabilities>
+		</cpt>
+		<cpt id="PlantHealth">
+			<state id="healthy" />
+			<state id="unhealthy" />
+			<parents>Flowering FallingLeaves Light Water</parents>
+			<probabilities>0.68 0.32 0.45 0.55 0.43 0.5700000000000001 0.83 0.17 0.98 0.02 0.85 0.15 0.92 0.08 0.4 0.6 0.7 0.3 0.36 0.64 0.44 0.5600000000000001 0.05 0.95 0.75 0.25 0.6 0.4 0.68 0.32 0.48 0.52</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.621.1 ACADEMIC" name="FlowerCare" faultnameformat="nodestate">
+			<node id="Water">
+				<name>Water</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>168 54 353 134</position>
+				<barchart active="true" width="161" height="64" />
+			</node>
+			<node id="Node2">
+				<name>Sunlight</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>723 55 921 129</position>
+				<barchart active="true" width="161" height="64" />
+			</node>
+			<node id="Light">
+				<name>Light</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1075 53 1285 133</position>
+				<barchart active="true" width="160" height="64" />
+			</node>
+			<node id="Flowering">
+				<name>Flowering</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>229 234 291 272</position>
+				<barchart active="true" width="161" height="64" />
+			</node>
+			<node id="Mold">
+				<name>Mold</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>519 239 561 265</position>
+				<barchart active="true" width="162" height="64" />
+			</node>
+			<node id="LeafHealth">
+				<name>HangingLeaves</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>508 392 574 433</position>
+				<barchart active="true" width="163" height="64" />
+			</node>
+			<node id="PlantHealth">
+				<name>PlantHealth</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>647 712 713 753</position>
+				<barchart active="true" width="160" height="64" />
+			</node>
+			<node id="BrownLeaves">
+				<name>BrownLeaves</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>779 387 859 437</position>
+				<barchart active="true" width="161" height="64" />
+			</node>
+			<node id="FallingLeaves">
+				<name>FallingLeaves</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>644 548 722 596</position>
+				<barchart active="true" width="164" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
